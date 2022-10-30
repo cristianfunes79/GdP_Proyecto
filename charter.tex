@@ -7,7 +7,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Sensor de Estacionamiento LoRaWAN} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,18 +17,17 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Cristian Funes} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
-% FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
+\director{Ernesto Chediack}
+\pertenenciaDirector{CEGA Electrónica}
 \codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Ernesto Chediack}
+\empresaCliente{CEGA Electrónica}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,8 +37,8 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
+\fechaINICIO{20 de octubre de 2022}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{8 de diciembre de 2022} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
 
 
@@ -69,7 +68,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & dd/mm/aaaa \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +91,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de un prototipo de un sensor de estacionamiento con conectividad LoRaWAN, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -115,6 +114,16 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
+El proyecto que aquí se describe, consiste en la implementación de un sensor de estacionamiento del tipo "tacha", con conectividad LoRaWAN.
+Dicho sensor estará alimentado con baterías, y utilizar como forma de detección un magnetómetro y un sensor del tipo "tiempo de vuelo" (o ToF por sus siglas en ingles).
+Cuando un vehículo se posicione sobre el dispositivo, el sensor lo detectara y enviara un mensaje a un servidor LoRaWAN indicando dicho evento. Esto permitirá realizar una medición en tiempo real de cuanto tiempo estuvo el vehículo estacionado.
+Algo fundamental en este proyecto es poder lograr una autonomia lo mas alta posible. Esto se debe a que si no se logra la autonomia adecuada, el proyecto no sera escalable a un numero grande de sensores de estacionamiento. 
+Tambien debe ser posible conectar un gran numero de nodos a la red. Por ello se decidio utilizar tecnologia LoRaWAN.
+La tecnologia LoRaWAN permite conectar un numero muy grande de dispositivos, con una topologia estrella que es facilmente escalable. 
+Ademas el tipo de modulacion LoRA permite alcanzar grandes distancias de conexion con bajo consumo de energia.
+
+En la siguiente figura se puede observar un diagrama en bloques del sistema:
+ 
 
 \begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
 
@@ -174,8 +183,9 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
+Auspiciante   & Ernesto Chediack  & CEGA Electronica& Gerente de Ingenieria \\ \hline
+Cliente       & \clientename      &\empclientename	& Gerente de Ingenieria
+\\ \hline
 Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores &                   &              	&        	\\ \hline
@@ -183,7 +193,7 @@ Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hli
 Equipo        & miembro1 \newline 
 				miembro2          &              	&        	\\ \hline
 Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final &                   &UNLP				&        	\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -209,6 +219,8 @@ Por ejemplo:
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
+El proposito de este proyecto es ...
+
 \begin{consigna}{red}
 ¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
@@ -217,6 +229,23 @@ Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de e
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
+
+El presente proyecto incluye:
+\begin{itemize}
+	\item Diseno, implementacion y montaje de una placa funcional para el sensor de estacionamiento.
+	\item Desarrollo del firmware para el microcontrolador del sensor de estacionamiento.
+	\item Desarrollo de entorno de testing.
+	\item Configuracion y puesta en marcha de Gateway LoRaWAN.
+	\item Configuracion y puesta en marcha de servidor LoRaWAN.
+\end{itemize}
+
+El presente proyecto no incluye:
+\begin{itemize}
+	\item Despliegue de red de mas de un sensor.
+	\item Diseno de gabinete.
+	\item Instalacion de sensor en via publica.
+	\item Desarrollo de aplicacion de parquimetro.
+\end{itemize}
 
 \begin{consigna}{red}
 ¿Qué se incluye y que no se incluye en este proyecto?
@@ -232,6 +261,13 @@ Explicitar además todo lo que no quede incluido (``El presente proyecto no incl
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
+
+Para el desarrollo del siguiente proyecto se supone que:
+\begin{itemize}
+	\item Se conseguiran todos los componentes necesarios para la implementacion del dispositivo.
+	\item Se podra hacer uso de un Gateway LoRa.
+	\item Se podra utilizar la banda ISM 915MHz.	
+\end{itemize}
 
 \begin{consigna}{red}
 ``Para el desarrollo del presente proyecto se supone que: ...''
