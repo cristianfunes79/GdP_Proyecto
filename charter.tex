@@ -1,6 +1,6 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
@@ -17,13 +17,13 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Cristian Funes} 
+\autor{Ing. Cristian Funes} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Ernesto Chediack}
+\director{Ing. Ernesto Chediack}
 \pertenenciaDirector{CEGA Electrónica}
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+%\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+%\pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Ernesto Chediack}
@@ -69,10 +69,7 @@ codirector, % Uncomment to add a codirector to the title page
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                 & 03/11/2022 \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
+2      & Se completa hasta el punto 9 inclusive	                & 10/11/2022 \\ \hline
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -114,14 +111,14 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-El proyecto que aquí se describe, consiste en la implementación de un sensor de estacionamiento con conectividad LoRaWAN. El sensor será del tipo "tacha", como puede verse en la Figura \ref{fig:ParkingSensor}.
+El proyecto que aquí se describe consiste en la implementación de un sensor de estacionamiento con conectividad LoRaWAN. El sensor será del tipo "tacha", como puede verse en la Figura \ref{fig:ParkingSensor}.
 
 \vspace{25px}
 
 \begin{figure}[H]
 \centering 
 \includegraphics[width=.75\textwidth]{./Figuras/ParkingSensor.jpg}
-\caption{Sensor de estacionamiento}
+\caption{Sensor de estacionamiento.}
 \label{fig:ParkingSensor}
 \end{figure}
 
@@ -133,17 +130,17 @@ En la Figura \ref{fig:ParkingSensorDiagram} puede verse un diagrama en bloques d
 
 \vspace{25px}
 
-\begin{figure}[H]red 
+\begin{figure}[H]
 \centering 
 \includegraphics[width=.75\textwidth]{./Figuras/DiagramaBloqueSensor.png}
-\caption{Diagrama en bloques del sensor de estacionamiento}
+\caption{Diagrama en bloques del sensor de estacionamiento.}
 \label{fig:ParkingSensorDiagram}
 \end{figure}
 
 \vspace{25px}
 
 Se observa que el equipo se alimenta a baterías. Esto es un desafío ya que debe lograrse una autonomía de al menos un año para que el proyecto sea escalable.\\
-Como método de detección se empleará un conjunto magnetómetro-LDR. La idea es poder evitar falsas detecciones, usando ambos sensores. Cuando un vehículo se posicione arriba del sensor, se producirá una variación en la intensidad luminosa que será medida por el LDR. Esto, en junto con la variación de campo magnético producida por la masa vehicular, permitirá mejorar la exactitud de las detecciones, evitando falsos positivos y falsos negativos.\\
+Como método de detección se empleará un conjunto magnetómetro-LDR. La idea es poder evitar falsas detecciones usando ambos sensores. Cuando un vehículo se posicione arriba del sensor, se producirá una variación en la intensidad luminosa que será medida por el LDR. Esto, en junto con la variación de campo magnético producida por la masa vehicular, permitirá mejorar la exactitud de las detecciones, evitando falsos positivos y falsos negativos.\\
 El microcontrolador será el encargado de realizar la lectura de los sensores, como también de controlar la comunicación LoRaWAN y el consumo de energía.
 
 
@@ -161,12 +158,10 @@ Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Auspiciante   & Ernesto Chediack  & CEGA Electronica& Gerente de Ingenieria \\ \hline
 Cliente       & \clientename      &\empclientename	& Gerente de Ingenieria
 \\ \hline
-Impulsor      & -                 & -            	& -      	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores & Gabriel Caballero & CEGA Electrónica& Desarrollador\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
 Equipo        & José Bosdari      & Supercanal     	& Gerente I+D\\ \hline
-Opositores    & -                 & -             	& -       	\\ \hline
 Usuario final & -                 & Municipalidad de Luján de Cuyo& -       	\\ \hline
 \end{tabularx}
 \end{table}
@@ -186,7 +181,7 @@ El presente proyecto incluye:
 \begin{itemize}
 	\item Diseño, implementación y montaje de una placa funcional para el sensor de estacionamiento.
 	\item Desarrollo del firmware para el microcontrolador del sensor de estacionamiento.
-	\item Desarrollo de entorno de testing.
+	\item Desarrollo del entorno de testing.
 	\item Puesta en marcha de una red de 10 sensores para la Municipalidad de Luján de Cuyo.
 \end{itemize}
 
@@ -205,112 +200,230 @@ Para el desarrollo del siguiente proyecto se supone que:
 \begin{itemize}
 	\item Se conseguirán todos los componentes necesarios para la implementación del dispositivo.
 	\item Se podrá acceder a una red LoRa.
-	\item Se podrá utilizar la banda ISM 915MHz.	
+	\item Se podrá utilizar la banda ISM 915MHz.
+	\item Se podrán realizar las pruebas y mediciones necesarias para calcular la autonomía del dispositivo.
+	\item El auspiciante mantendrá el interés en continuar con el desarrollo del proyecto durante toda la duración del mismo.
 \end{itemize}
 
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+A continuación se enumeran los requerimientos del proyecto. Se han agrupado de acuerdo a su afinidad en requerimientos funcionales, no funcionales, de la interfaz externa, de diseño del hardware, de testing, de documentación y opcionales. Se le asigna a cada requerimiento un nivel de prioridad del 1 al 5, siendo 1 la prioridad más alta y 5 la prioridad más baja.
 
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El equipo debe detectar vehículos utilizando un LDR y un magnetómetro [1].
+			\item El equipo debe conectarse a una red LoRaWAN [1].
+			\item El equipo debe enviar un mensaje cada vez que cambie el estado de detección de un vehículo [1].
+			\item El equipo debe auto calibrarse cuando se lo encienda por primera vez, para configurar un umbral de detección de vehículos [1].
+			\item El equipo debe reportar el nivel de batería cada vez que envía un mensaje por la red LoRaWAN [2].
+			\item El equipo debe salir configurado de fábrica con todas las claves necesarias para conectarse a un servidor LoRaWAN [2].
+			\item El equipo debe tener un modo de trabajo offline, donde se pueda guardar cada evento hasta que se recupere la conexión con la red LoRaWAN [3].
+			\item El equipo debe enviar un mensaje de keep alive cada 12 horas por la red LoRaWAN [3].
+			\item El equipo debe reportar que se detectó o se dejó de detectar un vehículo dentro de los 2 minutos de producido el evento [3].
+		\end{enumerate}
+	\item Requerimientos no funcionales
+		\begin{enumerate}
+			\item El equipo debe operar en la banda de uso compartido sin autorización comprendida entre 915 MHz y 928 MHz [1].
+			\item Todo el firmware desarrollado para el proyecto deberá estar correctamente versionado  usando una herramienta de control de versiones [1].
+			\item Se deberán realizar revisiones de código con los miembros del equipo de trabajo cuando se integren nuevas funcionalidades el firmware [2].
+			\item Cada equipo deberá contar con un número de serie que permita la trazabilidad y la localización geográfica del mismo [2].
+			\item Se deberán liberar releases de firmware intermedias al cliente para analizar el estado de avance del proyecto [3].
+			\item Se deberá programar reuniones mensuales con el cliente para analizar el estado del proyecto [3].
+		\end{enumerate}
+	\item Requerimientos de la interfaz externa
+		\begin{enumerate}
+			\item El equipo debe montarse dentro de una tacha reductora de velocidad [1].
+		\end{enumerate}
+	\item Requerimientos de diseño del hardware
+		\begin{enumerate}
+			\item El equipo debe alimentarse con baterías [1].
+			\item El desarrollo deberá realizarse utilizando un microcontrolador [1].
+			\item El equipo debe incluir un módulo de comunicaciones LoRa [1].
+			\item El equipo debe tener una autonomía de por lo menos 1 año [3].
+		\end{enumerate}
+	\item Requerimientos de testing
+		\begin{enumerate}
+			\item Cada módulo de software implementado debe contar con un coverage de código mayor al 80\% [2].
+			\item El entorno de desarrollo de software debe contar con la posibilidad de ejecutar tests unitarios automáticamente cuando se suba código nuevo al repositorio [3].
+			\item Deben realizarse tests de integración [5].
+			\item Deben realizarse tests del tipo end to end [5].
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item Se deberá redactar una memoria técnica del proyecto según la fecha definida en este documento [1].
+			\item Se deberá documentar el software desarrollado utilizando doxygen [2].
+			\item Se deberá entregar un manual que detalle el correcto uso del equipo [3].
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimientos opcionales
+		\begin{enumerate}
+			\item El equipo debe ser capaz de recibir mensajes de configuración a través de la red LoRaWAN [5].
+		\end{enumerate}
 \end{enumerate}
+ 
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+En esta sección se detallan las historias de usuario. Las mismas se desarrollaron desde el punto de vista del cliente. Los story points se calcularon como la suma de cada uno de los distintos aspectos que se detallan a continuación:
+\begin{enumerate}
+	\item La \textit{prioridad} es el interés del cliente por incluir una característica. Se divide en distintos valores a los cuales se les asigna un peso numérico:
+		\begin{enumerate}
+	 		\item Alta [5].
+	 		\item Media [3].
+	 		\item Baja [2].
+	 		\item Muy baja [1].
+	 	\end{enumerate} 
+	 \item La \textit{cantidad de trabajo} es una medida del esfuerzo asociado para desarrollar la tarea:
+	 	\begin{enumerate}
+	 		\item Alta [8].
+	 		\item Media [5].
+	 		\item Baja [3].
+	 	\end{enumerate}
+	 \item La \textit{complejidad} es una medida de lo difícil que se espera que sea implementar la característica:
+	 	\begin{enumerate}
+	 		\item Alta [13].
+	 		\item Media [8].
+	 		\item Baja [5].
+	 	\end{enumerate}
+	 \item El \textit{riesgo e incertidumbre} es una medida del impacto que tiene implementar la característica:
+	 	\begin{enumerate}
+	 		\item Alta [8].
+	 		\item Media [3].
+	 		\item Baja [1].
+	 	\end{enumerate}
+\end{enumerate}
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+\begin{enumerate}
+\item \textit{Historia de usuario 1.} El cliente quiere instalar el equipo en la calle sin tener que realizar conexiones de ningún tipo, para poder reducir el tiempo de instalación y el costo de mantenimiento.
+	\begin{itemize}
+		\item Prioridad: Alta.
+		\item Cantidad de trabajo: Media .
+		\item Complejidad: Media.
+		\item Riesgo e incertidumbre: Baja.
+		\item Story points: 19.
+	\end{itemize}
+	
+	\item \textit{Historia de usuario 2.} El cliente quiere conectar miles de sensores de estacionamiento dentro de la misma red para poder reducir los costos de mantenimiento.
+	\begin{itemize}
+		\item Prioridad: Media.
+		\item Cantidad de trabajo: Baja.
+		\item Complejidad: Media.
+		\item Riesgo e incertidumbre: Alta.
+		\item Story points: 22.
+	\end{itemize}
+	
+		\item \textit{Historia de usuario 3.} El cliente quiere poder conocer en tiempo real el estado de cada uno de los sensores, para poder determinar el tiempo que un vehículo se encuentra estacionado.
+	\begin{itemize}
+		\item Prioridad: Alta.
+		\item Cantidad de trabajo: Baja.
+		\item Complejidad: Baja.
+		\item Riesgo e incertidumbre: Baja.
+		\item Story points: 14.
+	\end{itemize}
+	
+	\item \textit{Historia de usuario 4.} El cliente quiere poder conocer la ubicación geográfica de cada uno de los sensores, para poder determinar qué espacios están disponibles para estacionar.
+	\begin{itemize}
+		\item Prioridad: Alta.
+		\item Cantidad de trabajo: Baja.
+		\item Complejidad: Baja.
+		\item Riesgo e incertidumbre: Media.
+		\item Story points: 16.
+	\end{itemize}
+	
+	\item \textit{Historia de usuario 5.} El cliente quiere que la red de sensores use una banda de frecuencias del espectro de RF no licenciado, para reducir los costos de operación.
+	\begin{itemize}
+		\item Prioridad: Muy baja.
+		\item Cantidad de trabajo: Baja.
+		\item Complejidad: Media.
+		\item Riesgo e incertidumbre: Alta.
+		\item Story points: 20.
+	\end{itemize}
+\end{enumerate}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-
-Los entregables del proyecto son (ejemplo):
-
-\begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
-\end{itemize}
-
-\end{consigna}
+Los entregables del proyecto son:
+	\begin{enumerate}
+		\item Manual de usuario.
+		\item Prototipo funcional.
+		\item Diagramas de circuitos.
+		\item Código fuente del firmware.
+		\item Informe final.
+	\end{enumerate}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
-\begin{enumerate}
-\item Grupo de tareas 1
+A continuación se detalla el desglose de tareas, con un detalle de las horas que se estima llevará finalizar cada una:
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+		\item Organización del proyecto (50hs)
+			\begin{enumerate}
+				\item Configuración de las herramientas para gestión (5hs). 
+				\item Elaboración del informe de planificación del proyecto (40hs).
+				\item Ajuste y control de avance de las tareas (5hs).
+			\end{enumerate}
+		\item Investigación preliminar (32hs)
+			\begin{enumerate}
+				\item Investigación sobre productos similares en el mercado (8hs).
+				\item Investigación sobre redes LoRaWAN (16hs).
+				\item Investigación sobre sistemas de detección basados en magnetómetro (8hs).
+			\end{enumerate}
+		\item Investigación de hardware (30hs)
+			\begin{enumerate}
+				\item Investigación y selección de módulo LoRaWAN (6hs).
+				\item Investigación y selección de magnetómetro (6hs).
+				\item Investigación y selección de microcontrolador (4hs).
+				\item Investigación y selección de baterías (8hs).
+				\item Investigación y selección de reguladores de tensión para aplicaciones de bajo consumo energético (6hs).
+			\end{enumerate}
+		\item Desarrollo de hardware (156hs)
+			\begin{enumerate}
+				\item Desarrollo de circuito esquemático (40hs).
+				\item Desarrollo de lista de materiales (4hs).
+				\item Búsqueda y adquisición de componentes (6hs).
+				\item Desarrollo de bibliotecas de componentes (16hs).
+				\item Routeo del PCB (40hs).
+				\item Enviar a fabricar PCB (2hs).
+				\item Montaje del PCB (8hs).
+				\item Pruebas de funcionamiento (16hs).
+				\item Rediseño del PCB ante fallas (24hs).
+			\end{enumerate}
+		\item Investigación de firmware (16hs)
+			\begin{enumerate}
+				\item Investigación y selección de RTOS (8hs).
+				\item Investigación sobre metodologías de trabajo (8hs).
+			\end{enumerate}
+		\item Desarrollo de firmware (368hs)
+			\begin{enumerate}
+				\item Creación de repositorios de trabajo (8hs).
+				\item Instalación de las herramientas de trabajo (8hs).
+				\item Diseño de la arquitectura de software (24hs).
+				\item Selección y configuración de framework de testing (8hs).
+				\item Desarrollo de los drivers para el magnetómetro (40hs).
+				\item Desarrollo de los drivers para el módulo LoRaWAN (40hs).
+				\item Desarrollo de las tareas de aplicación (120hs).
+				\item Integración de los componentes de software (120hs).
+			\end{enumerate}
+		\item Integración (48hs)
+			\begin{enumerate}
+				\item Montaje del hardware en gabinete (8hs).
+				\item Pruebas de campo (40hs).
+			\end{enumerate}
+		\item Documentación (72hs)
+			\begin{enumerate}
+				\item Generar manual de usuario (8hs).
+				\item Generar documentación del firmware (8hs).
+				\item Elaboración del informe final (40hs).
+				\item Elaboración de la presentación final (16hs).
+			\end{enumerate}
 	\end{enumerate}
-\item Grupo de tareas 2
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\end{enumerate}
-\item Grupo de tareas 3
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
-	\end{enumerate}
-\end{enumerate}
 
-Cantidad total de horas: (tantas hs)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
+Cantidad total de horas: 772hs.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
